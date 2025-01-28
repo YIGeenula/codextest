@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gesitha Themiya - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="images/FavIcon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <!-- Add this right after the opening <body> tag -->
+    <div id="splash-screen" class="fixed inset-0 z-[9999] flex items-center justify-center bg-[#0A0A0A] transition-all duration-500">
+        <div class="relative text-center">
+            <!-- Animated background circles -->
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="animate-pulse-slow bg-orange-500/20 w-64 h-64 rounded-full blur-2xl"></div>
+                <div class="absolute animate-pulse-slow-delay bg-orange-500/10 w-96 h-96 rounded-full blur-3xl"></div>
+            </div>
+            
+            <!-- Main content -->
+            <div class="relative z-10 space-y-8">
+                <!-- Logo text -->
+                <div class="mb-8">
+                    <h1 class="text-6xl font-bold">
+                        <span class="text-white">Gesitha</span>
+                        <span class="bg-gradient-to-r from-orange-500 to-orange-400 text-transparent bg-clip-text">Weerasinghe</span>
+                    </h1>
+                </div>
+
+                <!-- Modern loading indicator -->
+                <div class="flex flex-col items-center space-y-4">
+                    <div class="relative w-48 h-1 bg-gray-800/50 rounded-full overflow-hidden">
+                        <div class="loading-progress absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-400 rounded-full transform-gpu"></div>
+                    </div>
+                    <div class="loading-text flex items-center text-gray-400 text-sm tracking-wider uppercase">
+                        <span class="mr-2">Loading</span>
+                        <div class="flex space-x-1">
+                            <div class="w-1 h-1 bg-orange-500 rounded-full animate-bounce"></div>
+                            <div class="w-1 h-1 bg-orange-500 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+                            <div class="w-1 h-1 bg-orange-500 rounded-full animate-bounce" style="animation-delay: 0.4s"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Update the mobile controls with background bar -->
+    <div class="lg:hidden fixed top-0 w-full z-50">
+        <!-- Background bar -->
+        <div class="bg-[#0A0A0A] w-full py-3 px-4 shadow-lg">
+            <div class="flex justify-between items-center">
+                <!-- Left side - Menu button -->
+                <button id="mobile-menu-btn" class="text-white">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                
+                <!-- Right side - Theme toggle -->
+                <button id="mobile-theme-toggle" class="text-white hover:text-orange-500 transition-colors">
+                    <i class="fas fa-sun text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Update the nav element -->
+    <nav id="nav-menu" class="fixed left-0 top-0 h-full w-80 bg-[#0a0a0a] text-white p-4 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-40 flex flex-col">
+        <!-- Navigation Items Container -->
+        <div class="space-y-6 flex flex-col items-center flex-1 justify-center -mt-20">
+            <!-- Logo -->
+            <div class="mb-8">
+                <img src="images/Navbar-Logo-02.png" alt="CodeXBlaze Logo" class="w-48 h-auto">
+            </div>
+
+            <!-- Navigation Items -->
+            <a href="#home" class="nav-item flex items-center justify-center w-48 space-x-4 p-3 rounded-lg hover:bg-[#181818] transition-all duration-200">
+                <i class="fas fa-home w-8 text-xl text-center"></i>
+                <span class="nav-text text-lg flex-1">Home</span>
+            </a>
+            
+            <a href="#about" class="nav-item flex items-center justify-center w-48 space-x-4 p-3 rounded-lg hover:bg-[#181818] transition-all duration-200">
+                <i class="fas fa-user w-8 text-xl text-center"></i>
+                <span class="nav-text text-lg flex-1">About</span>
+            </a>
+            
+            <a href="#services" class="nav-item flex items-center justify-center w-48 space-x-4 p-3 rounded-lg hover:bg-[#181818] transition-all duration-200">
+                <i class="fas fa-cogs w-8 text-xl text-center"></i>
+                <span class="nav-text text-lg flex-1">Services</span>
+            </a>
+            
+            <a href="#portfolio" class="nav-item flex items-center justify-center w-48 space-x-4 p-3 rounded-lg hover:bg-[#181818] transition-all duration-200">
+                <i class="fas fa-briefcase w-8 text-xl text-center"></i>
+                <span class="nav-text text-lg flex-1">Portfolio</span>
+            </a>
+            
+            <a href="#contact" class="nav-item flex items-center justify-center w-48 space-x-4 p-3 rounded-lg hover:bg-[#181818] transition-all duration-200">
+                <i class="fas fa-envelope w-8 text-xl text-center"></i>
+                <span class="nav-text text-lg flex-1">Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div id="home" class="lg:ml-64 p-8 pt-20 lg:pt-8 main-content min-h-screen flex items-center justify-center">
+        <!-- Content Container -->
+        <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between max-w-6xl relative">
+            <!-- Introduction Section -->
+            <div class="space-y-6 max-w-2xl text-center lg:text-left px-4 mt-24 lg:mt-0">
+                <h1 class="text-4xl lg:text-5xl font-bold leading-tight">
+                    Hello, my name is 
+                    <span class="text-[#00e5ff] block mt-2">Yasiru Isum Geenula</span>
+                </h1>
+                
+                <div class="text-2xl lg:text-3xl font-bold">
+                    I'm a <span class="text-[#00e5ff]">Front</span>
+                </div>
+                
+                <p class="text-gray-300 text-lg lg:text-xl">
+                    I'm a skilled frontend web developer with over 1 years of experience. My expertise includes designing and developing responsive, user-centric websites and many more.
+                </p>
+
+                <button onclick="scrollToAbout()" class="bg-[#00e5ff] text-white px-6 py-3 lg:px-8 lg:py-4 rounded-full hover:bg-[#00c8ff] transition-all duration-300 text-lg">
+                    More About Me
+                </button>
+            </div>
+
+            <!-- Profile Image - Visible on all devices -->
+            <div class="relative mt-8 lg:mt-0">
+                <img src="images/ProPic.jpg" alt="Profile" class="w-96 h-[28rem] object-cover rounded-lg border-2 border-[#00e5ff]" loading="lazy">
+                <div class="absolute -top-4 -right-4 w-24 h-24 border-t-4 border-r-4 border-[#00e5ff]"></div>
+                <div class="absolute -bottom-4 -left-4 w-24 h-24 border-b-4 border-l-4 border-[#00e5ff]"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- About Me Section -->
+    <div id="about" class="lg:ml-64 p-8 main-content min-h-screen">
+        <div class="container mx-auto max-w-6xl">
+            <!-- Section Title -->
+            <div class="mb-12 text-center">
+                <h2 class="text-5xl font-bold">
+                    About <span class="text-[#00e5ff]">Me</span>
+                </h2>
+                <div class="w-24 h-1 bg-[#00e5ff] mt-4 mx-auto"></div>
+            </div>
+
+            <!-- Subtitle -->
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold">
+                    Frontend Developer & <span class="text-[#00e5ff]">UI/UX Designer</span>
+                </h3>
+            </div>
+
+            <!-- Description -->
+            <div class="text-center mb-16 max-w-3xl mx-auto">
+                <p class="text-gray-300 text-lg">
+                    I'm a passionate frontend developer with over 1 years of experience crafting beautiful 
+                    and functional web experiences. My approach combines clean code with creative 
+                    design solutions to build engaging user interfaces.
+                </p>
+            </div>
+
+            <!-- Skills and Details Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Technical Skills -->
+                <div class="bg-[#0a0a0a] p-8 rounded-2xl">
+                    <h4 class="text-2xl font-bold text-[#00e5ff] mb-6">Technical Skills</h4>
+                    
+                    <!-- HTML/CSS -->
+                    <div class="mb-6">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-white flex items-center">
+                                <i class="fas fa-code mr-2 text-[#00e5ff]"></i>
+                                HTML/CSS
+                            </span>
+                            <span class="text-[#00e5ff]">95%</span>
+                        </div>
+                        <div class="w-full bg-[#111111] rounded-full h-2">
+                            <div class="bg-[#00e5ff] h-2 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+
+                    <!-- JavaScript -->
+                    <div class="mb-6">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-white flex items-center">
+                                <i class="fab fa-js-square mr-2 text-[#00e5ff]"></i>
+                                JavaScript
+                            </span>
+                            <span class="text-[#00e5ff]">90%</span>
+                        </div>
+                        <div class="w-full bg-[#111111] rounded-full h-2">
+                            <div class="bg-[#00e5ff] h-2 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <!-- WordPress -->
+                    <div class="mb-6">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-white flex items-center">
+                                <i class="fab fa-wordpress mr-2 text-[#00e5ff]"></i>
+                                WordPress
+                            </span>
+                            <span class="text-[#00e5ff]">95%</span>
+                        </div>
+                        <div class="w-full bg-[#111111] rounded-full h-2">
+                            <div class="bg-[#00e5ff] h-2 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+
+                    <!-- UI/UX Design -->
+                    <div class="mb-6">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-white flex items-center">
+                                <i class="fas fa-pencil-ruler mr-2 text-[#00e5ff]"></i>
+                                UI/UX Design
+                            </span>
+                            <span class="text-[#00e5ff]">90%</span>
+                        </div>
+                        <div class="w-full bg-[#111111] rounded-full h-2">
+                            <div class="bg-[#00e5ff] h-2 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Personal Details -->
+                <div class="bg-[#0a0a0a] p-8 rounded-2xl">
+                    <h4 class="text-2xl font-bold text-[#00e5ff] mb-6">Personal Details</h4>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <!-- Left Column -->
+                        <div class="space-y-4">
+                            <div>
+                                <h5 class="text-[#00e5ff] mb-1">Name</h5>
+                                <p class="text-white">YI Geenula</p>
+                            </div>
+                            <div>
+                                <h5 class="text-[#00e5ff] mb-1">Age</h5>
+                                <p class="text-white">22</p>
+                            </div>
+                            <div>
+                                <h5 class="text-[#00e5ff] mb-1">Location</h5>
+                                <p class="text-white">Sri Lanka</p>
+                            </div>
+                        </div>
+
+                        <!-- Right Column -->
+                        <div class="space-y-4">
+                            <div>
+                                <h5 class="text-[#00e5ff] mb-1">Experience</h5>
+                                <p class="text-white">1+ Years</p>
+                            </div>
+                            <div>
+                                <h5 class="text-[#00e5ff] mb-1">Freelance</h5>
+                                <p class="text-white flex items-center">
+                                    Currently Unavailable
+                                    <span class="w-2 h-2 bg-red-500 rounded-full ml-2"></span>
+                                </p>
+                            </div>
+                            <div>
+                                <h5 class="text-[#00e5ff] mb-1">Languages</h5>
+                                <p class="text-white">English, Sinhala</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="flex gap-4 mt-8">
+                        <a href="YI-CV.pdf" download class="bg-[#00e5ff] text-white px-6 py-3 rounded-full hover:bg-[#00c8ff] transition-all duration-300 text-center flex-1">
+                            Download CV <i class="fas fa-download ml-2"></i>
+                        </a>
+                        <a href="#contact" class="border-2 border-[#00e5ff] text-white px-6 py-3 rounded-full hover:bg-[#00e5ff] transition-all duration-300 text-center flex-1">
+                            Hire Me
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Services Section -->
+    <div id="services" class="lg:ml-64 p-8 main-content min-h-screen">
+        <div class="container mx-auto max-w-6xl">
+            <!-- Section Title -->
+            <div class="mb-12 text-center">
+                <h2 class="text-5xl font-bold">
+                    My <span class="text-[#00e5ff]">Services</span>
+                </h2>
+                <div class="w-24 h-1 bg-[#00e5ff] mt-4 mx-auto"></div>
+            </div>
+
+            <!-- Subtitle -->
+            <div class="text-center mb-16">
+                <p class="text-gray-300 text-lg max-w-3xl mx-auto">
+                    Providing high-quality projects tailored to your needs
+                </p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Frontend Development -->
+                <div class="bg-[#0a0a0a] p-8 rounded-2xl group hover:border-[#00e5ff] border border-transparent transition-all duration-300">
+                    <div class="text-[#00e5ff] text-4xl mb-6">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Frontend Development</h3>
+                    <p class="text-gray-300 mb-6">
+                        Creating engaging user interfaces with modern frameworks and 
+                        libraries for optimal user experience.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-[#00e5ff] mr-3"></i>
+                            Modern Frameworks
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-[#00e5ff] mr-3"></i>
+                            Interactive UI/UX
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-[#00e5ff] mr-3"></i>
+                            Animation Effects
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- WordPress Development -->
+                <div class="bg-[#0a0a0a] p-8 rounded-2xl group hover:border-[#00e5ff] border border-transparent transition-all duration-300">
+                    <div class="text-[#00e5ff] text-4xl mb-6">
+                        <i class="fab fa-wordpress"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">WordPress Development</h3>
+                    <p class="text-gray-300 mb-6">
+                        Custom WordPress solutions including theme development, plugin 
+                        customization, and site optimization.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-[#00e5ff] mr-3"></i>
+                            Custom Themes
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-[#00e5ff] mr-3"></i>
+                            E-commerce Integration
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-[#00e5ff] mr-3"></i>
+                            Speed Optimization
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Portfolio Section -->
+    <div id="portfolio" class="lg:ml-64 p-8 main-content min-h-screen">
+        <div class="container mx-auto max-w-6xl">
+            <!-- Section Title -->
+            <div class="mb-12 text-center">
+                <h2 class="text-5xl font-bold">
+                    My <span class="text-[#00e5ff]">Projects</span>
+                </h2>
+                <div class="w-24 h-1 bg-[#00e5ff] mt-4 mx-auto"></div>
+            </div>
+
+            <!-- Subtitle -->
+            <div class="text-center mb-16">
+                <p class="text-gray-300 text-lg max-w-3xl mx-auto">
+                    Showcasing my creative work and technical expertise
+                </p>
+            </div>
+
+            <!-- Recent Projects Section -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-bold mb-8">
+                    Recent <span class="text-[#00e5ff]">Projects</span>
+                </h3>
+
+                <!-- Projects Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- TeckyBuilds Project -->
+                    <div class="bg-[#0a0a0a] rounded-2xl overflow-hidden group">
+                        <div class="relative overflow-hidden">
+                            <img src="images/Project-imgs/proj-1.png" alt="TeckyBuilds" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-2">TeckyBuilds</h4>
+                            <p class="text-gray-300 text-sm mb-4">
+                                Modern e-commerce website <span class="text-[#00e5ff]">(Homepage Only)</span> for PC components 
+                                featuring a custom PC builder, product catalog, and service booking system. 
+                                Includes responsive design.
+                            </p>
+                            <div class="flex gap-2">
+                                <span class="bg-[#111111] text-[#00e5ff] text-xs px-3 py-1 rounded-full">HTML</span>
+                                <span class="bg-[#111111] text-[#00e5ff] text-xs px-3 py-1 rounded-full">CSS</span>
+                                <span class="bg-[#111111] text-[#00e5ff] text-xs px-3 py-1 rounded-full">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Glamour Haven Project -->
+                    <div class="bg-[#0a0a0a] rounded-2xl overflow-hidden group">
+                        <div class="relative overflow-hidden">
+                            <img src="images/Project-imgs/proj-2.png" alt="Glamour Haven" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-2">Glamour Haven</h4>
+                            <p class="text-gray-300 text-sm mb-4">
+                                Elegant salon website with online booking system, service catalog, and gallery 
+                                showcase. Features testimonials, pricing tables, and integrated contact forms for 
+                                appointments.
+                            </p>
+                            <div class="flex gap-2">
+                                <span class="bg-[#111111] text-[#00e5ff] text-xs px-3 py-1 rounded-full">HTML</span>
+                                <span class="bg-[#111111] text-[#00e5ff] text-xs px-3 py-1 rounded-full">CSS</span>
+                                <span class="bg-[#111111] text-[#00e5ff] text-xs px-3 py-1 rounded-full">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GW Portfolio Project -->
+                    <div class="bg-[#0a0a0a] rounded-2xl overflow-hidden group">
+                        <div class="relative overflow-hidden">
+                            <img src="images/Project-imgs/proj-3.png" alt="GW Portfolio" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-2">GW Portfolio</h4>
+                            <p class="text-gray-300 text-sm mb-4">
+                                Professional portfolio website for a graphic designer featuring animated 
+                                sections, project showcases, and a contact form. Includes skill progress bars 
+                                and downloadable CV functionality.
+                            </p>
+                            <div class="flex gap-2">
+                                <span class="bg-[#111111] text-[#00e5ff] text-xs px-3 py-1 rounded-full">HTML</span>
+                                <span class="bg-[#111111] text-[#00e5ff] text-xs px-3 py-1 rounded-full">CSS</span>
+                                <span class="bg-[#111111] text-[#00e5ff] text-xs px-3 py-1 rounded-full">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View All Projects Button -->
+            <div class="text-center">
+                <a href="projects.html" class="inline-flex items-center bg-[#00e5ff] text-white px-8 py-3 rounded-full hover:bg-[#00c8ff] transition-all duration-300">
+                    View All Projects
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Contact Section -->
+    <div id="contact" class="lg:ml-64 p-8 main-content min-h-screen">
+        <div class="container mx-auto max-w-6xl">
+            <!-- Section Title -->
+            <div class="mb-12 text-center">
+                <h2 class="text-5xl font-bold">
+                    Contact <span class="text-[#00e5ff]">Me</span>
+                </h2>
+                <div class="w-24 h-1 bg-[#00e5ff] mt-4 mx-auto"></div>
+            </div>
+
+            <!-- Subtitle -->
+            <div class="text-center mb-16">
+                <p class="text-gray-300 text-lg max-w-3xl mx-auto">
+                    Let's work together on your next project
+                </p>
+            </div>
+
+            <!-- Contact Content -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Contact Information -->
+                <div class="bg-[#0a0a0a] p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-8">Contact Information</h3>
+
+                    <!-- Contact Details -->
+                    <div class="space-y-6">
+                        <!-- Email -->
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-[#111111] p-4 rounded-full text-[#00e5ff]">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-[#00e5ff] text-sm mb-1">Email</h4>
+                                <p class="text-white">ylgeenuus425@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-[#111111] p-4 rounded-full text-[#00e5ff]">
+                                <i class="fas fa-phone-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-[#00e5ff] text-sm mb-1">Phone</h4>
+                                <p class="text-white">+94 71 269 6251</p>
+                            </div>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-[#111111] p-4 rounded-full text-[#00e5ff]">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-[#00e5ff] text-sm mb-1">Location</h4>
+                                <p class="text-white">Kalutara, Sri Lanka</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="mt-8">
+                        <h4 class="text-xl font-bold mb-4">Follow Me</h4>
+                        <div class="flex space-x-3">
+                            <a href="#" class="bg-[#111111] p-3 rounded-full text-[#00e5ff] hover:bg-[#00e5ff] hover:text-white transition-all duration-300">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="#" class="bg-[#111111] p-3 rounded-full text-[#00e5ff] hover:bg-[#00e5ff] hover:text-white transition-all duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="bg-[#111111] p-3 rounded-full text-[#00e5ff] hover:bg-[#00e5ff] hover:text-white transition-all duration-300">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="bg-[#111111] p-3 rounded-full text-[#00e5ff] hover:bg-[#00e5ff] hover:text-white transition-all duration-300">
+                                <i class="fab fa-behance"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-[#0a0a0a] p-8 rounded-2xl">
+                    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+                        <input type="hidden" name="access_key" value="YOUR-ACCESS-KEY">
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="text-[#00e5ff] text-sm mb-1 block">Name</label>
+                                <input type="text" name="name" required
+                                    class="w-full bg-[#111111] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00e5ff]">
+                            </div>
+                            <div>
+                                <label class="text-[#00e5ff] text-sm mb-1 block">Email</label>
+                                <input type="email" name="email" required
+                                    class="w-full bg-[#111111] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00e5ff]">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="text-[#00e5ff] text-sm mb-1 block">Subject</label>
+                            <input type="text" name="subject" required
+                                class="w-full bg-[#111111] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00e5ff]">
+                        </div>
+
+                        <div>
+                            <label class="text-[#00e5ff] text-sm mb-1 block">Message</label>
+                            <textarea name="message" rows="6" required
+                                class="w-full bg-[#111111] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00e5ff] resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" 
+                            class="w-full bg-[#00e5ff] text-white py-4 rounded-lg font-semibold hover:bg-[#00c8ff] transition-all duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer Section -->
+    <footer class="lg:ml-64 bg-[#0a0a0a] text-white py-12">
+        <div class="container mx-auto max-w-6xl px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- CodeXBlaze Column -->
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-bold">CodeXBlaze</h3>
+                    <p class="text-gray-300 text-sm">
+                        Professional Frontend Developer specializing in brand identity, web 
+                        development, and digital media.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-[#00e5ff] hover:text-white transition-colors">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-[#00e5ff] hover:text-white transition-colors">
+                            <i class="fab fa-behance"></i>
+                        </a>
+                        <a href="#" class="text-[#00e5ff] hover:text-white transition-colors">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-[#00e5ff] hover:text-white transition-colors">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links Column -->
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-bold">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#home" class="text-gray-300 hover:text-[#00e5ff] transition-colors">Home</a>
+                        </li>
+                        <li>
+                            <a href="#about" class="text-gray-300 hover:text-[#00e5ff] transition-colors">About</a>
+                        </li>
+                        <li>
+                            <a href="#services" class="text-gray-300 hover:text-[#00e5ff] transition-colors">Services</a>
+                        </li>
+                        <li>
+                            <a href="#portfolio" class="text-gray-300 hover:text-[#00e5ff] transition-colors">Portfolio</a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="text-gray-300 hover:text-[#00e5ff] transition-colors">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info Column -->
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-bold">Contact Info</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-map-marker-alt text-[#00e5ff] mr-2"></i>
+                            Kalutara, Sri Lanka
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-phone text-[#00e5ff] mr-2"></i>
+                            +94 71 269 6251
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-envelope text-[#00e5ff] mr-2"></i>
+                            ylgeenuus425@gmail.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright Bar -->
+            <div class="mt-12 pt-8 border-t border-gray-800 text-center">
+                <p class="text-gray-300">© 2025 CodeXBlaze. All rights reserved.</p>
+                <p class="text-sm mt-2">
+                    Designed & Developed by 
+                    <a href="#" class="text-[#00e5ff] hover:text-white transition-colors">
+                        Yasiru Isum Geenula | CodeXBlaze
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
