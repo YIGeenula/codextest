@@ -1,7 +1,11 @@
-.nav-item:hover .nav-text {
-    color: #04D9FF;
+/* Base styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Navigation styles */
+.nav-item:hover .nav-text,
 .nav-item:hover i {
     color: #04D9FF;
 }
@@ -9,17 +13,194 @@
 .nav-item {
     transition: all 0.3s ease;
     border: none;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
 }
 
 .nav-item:hover {
-    border: none;
     background-color: #181818;
 }
 
-/* Base font for the entire site */
-body {
-    font-family: 'Poppins', sans-serif;
-    transition: background-color 0.3s ease, color 0.3s ease;
+/* Mobile menu */
+@media (max-width: 1024px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    #nav-menu.active {
+        transform: translateX(0);
+    }
+}
+
+/* Common transitions */
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+/* Card styles */
+.bg-\[\#0a0a0a\] {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #0a0a0a;
+}
+
+.bg-\[\#0a0a0a\]:hover {
+    box-shadow: 0 10px 20px rgba(4, 217, 255, 0.1);
+}
+
+/* Icon animations */
+.fas, .fab {
+    transition: transform 0.3s ease;
+}
+
+.bg-\[\#0a0a0a\]:hover .fas,
+.bg-\[\#0a0a0a\]:hover .fab {
+    transform: scale(1.2);
+}
+
+/* Button effects */
+.bg-\[\#00e5ff\]:hover {
+    box-shadow: 0 4px 12px rgba(0, 229, 255, 0.3);
+}
+
+/* Progress bar animation */
+@keyframes fillProgress {
+    from { width: 0; }
+    to { width: var(--progress); }
+}
+
+/* Typing effect */
+.txt {
+    border-right: 0.2rem solid #04D9FF;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0% { border-color: transparent }
+    50% { border-color: #04D9FF }
+    100% { border-color: transparent }
+}
+
+/* Footer styles */
+footer {
+    background-color: #0A0A0A;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer h3 {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+footer .group {
+    transition: all 0.3s ease;
+}
+
+footer .group:hover i {
+    transform: scale(1.1);
+}
+
+footer a {
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+footer a:hover {
+    transform: translateX(5px);
+}
+
+footer .fas {
+    width: 20px;
+}
+
+/* Contact section mobile styles */
+@media (max-width: 768px) {
+    /* Text size adjustments */
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .text-3xl {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    /* Grid adjustments */
+    .grid-cols-1 {
+        gap: 2rem;
+    }
+    
+    .flex.gap-4 {
+        flex-direction: column;
+    }
+
+    /* Contact section */
+    #contact .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #contact .grid {
+        gap: 2px;
+    }
+
+    #contact .bg-\[\#0E0E0E\] {
+        border-radius: 0;
+        margin-left: -8px;
+        margin-right: -8px;
+        width: calc(100% + 16px);
+    }
+
+    /* Footer adjustments */
+    footer .grid {
+        text-align: center;
+    }
+    
+    footer .flex {
+        justify-content: center;
+    }
+    
+    footer .space-y-4 {
+        margin-bottom: 2rem;
+    }
+    
+    footer li.flex {
+        justify-content: center;
+    }
+}
+
+/* Laptop-specific adjustments */
+@media screen and (min-width: 1024px) and (max-height: 800px) {
+    #home, #about, #services, #portfolio, #contact {
+        min-height: 100vh;
+        height: auto;
+        padding: 2rem;
+    }
+
+    .container {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .gap-8 {
+        gap: 1.5rem;
+    }
+
+    /* Text size adjustments */
+    h1.text-4xl { font-size: 2.5rem; }
+    h2.text-4xl { font-size: 2.25rem; }
+    .text-3xl { font-size: 1.75rem; }
+    .text-2xl { font-size: 1.25rem; }
+    .text-xl { font-size: 1.125rem; }
+
+    /* Profile image adjustments */
+    .w-96 { width: 20rem; }
+    .h-\[28rem\] { height: 24rem; }
 }
 
 /* Keep the cursive font only for the name */
@@ -192,21 +373,6 @@ p {
 .nav-item:hover i {
     color: #04D9FF;
 }
-
-/* Update the logo color for light mode */
-[data-theme="light"] .nav-logo img {
-    filter: brightness(0) invert(1);
-}
-
-/* Update theme toggle button color */
-#theme-toggle {
-    color: var(--icon-color);
-}
-
-/* Update button text to stay white */
-button.bg-orange-500 {
-    color: white !important;
-} 
 
 
 /* Update the container for mobile controls */
@@ -643,34 +809,38 @@ button[type="submit"]:hover {
 
 /* Footer styles */
 footer {
-    background-color: var(--bg-secondary);
-    border-top: 1px solid var(--border-color);
+    background-color: #0A0A0A;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Footer headings */
 footer h3 {
     position: relative;
-    display: inline-block;
+    margin-bottom: 1.5rem;
 }
 
-/* Social icons */
-footer .fab {
-    transition: transform 0.3s ease;
+/* Social icons hover effect */
+footer .group {
+    transition: all 0.3s ease;
+}
+
+footer .group:hover i {
+    transform: scale(1.1);
 }
 
 /* Quick links hover effect */
-footer .text-gray-300 {
+footer a {
     transition: all 0.3s ease;
+    display: inline-block;
+}
+
+footer a:hover {
+    transform: translateX(5px);
 }
 
 /* Contact info icons */
 footer .fas {
-    transition: transform 0.3s ease;
-}
-
-/* Copyright section */
-footer .border-t {
-    border-color: rgba(255, 255, 255, 0.1);
+    width: 20px;
 }
 
 /* Responsive adjustments */
@@ -683,11 +853,11 @@ footer .border-t {
         justify-content: center;
     }
     
-    footer .text-gray-300:hover {
-        padding-left: 0;
+    footer .space-y-4 {
+        margin-bottom: 2rem;
     }
     
-    footer li {
+    footer li.flex {
         justify-content: center;
     }
 } 
@@ -1490,5 +1660,29 @@ button.bg-\[\#00e5ff\]:hover {
     .bg-\[\#0a0a0a\].rounded-2xl {
         max-width: 400px;
         margin: 0 auto;
+    }
+} 
+
+/* Contact section mobile styles */
+@media (max-width: 768px) {
+    #contact .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #contact .grid {
+        gap: 2px;  /* Reduced gap between cards on mobile */
+    }
+
+    #contact .bg-\[\#0E0E0E\] {
+        border-radius: 0;
+        margin-left: -8px;
+        margin-right: -8px;
+        width: calc(100% + 16px);
+    }
+    
+    /* Keep form inputs with some padding */
+    #contact form {
+        padding: 0;
     }
 } 
