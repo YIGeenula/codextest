@@ -11,43 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="bg-gray-100">
-    <!-- Add this right after the opening <body> tag -->
-    <div id="splash-screen" class="fixed inset-0 z-[9999] flex items-center justify-center bg-[#0A0A0A] transition-all duration-500">
-        <div class="relative text-center">
-            <!-- Animated background circles -->
-            <div class="absolute inset-0 flex items-center justify-center">
-                <div class="animate-pulse-slow bg-orange-500/20 w-64 h-64 rounded-full blur-2xl"></div>
-                <div class="absolute animate-pulse-slow-delay bg-orange-500/10 w-96 h-96 rounded-full blur-3xl"></div>
-            </div>
-            
-            <!-- Main content -->
-            <div class="relative z-10 space-y-8">
-                <!-- Logo text -->
-                <div class="mb-8">
-                    <h1 class="text-6xl font-bold">
-                        <span class="text-white">Gesitha</span>
-                        <span class="bg-gradient-to-r from-orange-500 to-orange-400 text-transparent bg-clip-text">Weerasinghe</span>
-                    </h1>
-                </div>
-
-                <!-- Modern loading indicator -->
-                <div class="flex flex-col items-center space-y-4">
-                    <div class="relative w-48 h-1 bg-gray-800/50 rounded-full overflow-hidden">
-                        <div class="loading-progress absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-400 rounded-full transform-gpu"></div>
-                    </div>
-                    <div class="loading-text flex items-center text-gray-400 text-sm tracking-wider uppercase">
-                        <span class="mr-2">Loading</span>
-                        <div class="flex space-x-1">
-                            <div class="w-1 h-1 bg-orange-500 rounded-full animate-bounce"></div>
-                            <div class="w-1 h-1 bg-orange-500 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
-                            <div class="w-1 h-1 bg-orange-500 rounded-full animate-bounce" style="animation-delay: 0.4s"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Update the mobile controls with background bar -->
     <div class="lg:hidden fixed top-0 w-full z-50">
         <!-- Background bar -->
@@ -56,11 +19,6 @@
                 <!-- Left side - Menu button -->
                 <button id="mobile-menu-btn" class="text-white">
                     <i class="fas fa-bars text-2xl"></i>
-                </button>
-                
-                <!-- Right side - Theme toggle -->
-                <button id="mobile-theme-toggle" class="text-white hover:text-orange-500 transition-colors">
-                    <i class="fas fa-sun text-2xl"></i>
                 </button>
             </div>
         </div>
@@ -72,7 +30,9 @@
         <div class="space-y-6 flex flex-col items-center flex-1 justify-center -mt-20">
             <!-- Logo -->
             <div class="mb-8">
-                <img src="images/Navbar-Logo-02.png" alt="CodeXBlaze Logo" class="w-48 h-auto">
+                <a href="#home" onclick="scrollToHome()">
+                    <img src="images/Navbar-Logo-02.png" alt="CodeXBlaze Logo" class="w-48 h-auto">
+                </a>
             </div>
 
             <!-- Navigation Items -->
@@ -86,14 +46,14 @@
                 <span class="nav-text text-lg flex-1">About</span>
             </a>
             
-            <a href="#services" class="nav-item flex items-center justify-center w-48 space-x-4 p-3 rounded-lg hover:bg-[#181818] transition-all duration-200">
-                <i class="fas fa-cogs w-8 text-xl text-center"></i>
-                <span class="nav-text text-lg flex-1">Services</span>
-            </a>
-            
             <a href="#portfolio" class="nav-item flex items-center justify-center w-48 space-x-4 p-3 rounded-lg hover:bg-[#181818] transition-all duration-200">
                 <i class="fas fa-briefcase w-8 text-xl text-center"></i>
                 <span class="nav-text text-lg flex-1">Portfolio</span>
+            </a>
+            
+            <a href="#services" class="nav-item flex items-center justify-center w-48 space-x-4 p-3 rounded-lg hover:bg-[#181818] transition-all duration-200">
+                <i class="fas fa-cogs w-8 text-xl text-center"></i>
+                <span class="nav-text text-lg flex-1">Services</span>
             </a>
             
             <a href="#contact" class="nav-item flex items-center justify-center w-48 space-x-4 p-3 rounded-lg hover:bg-[#181818] transition-all duration-200">
@@ -115,7 +75,7 @@
                 </h1>
                 
                 <div class="text-2xl lg:text-3xl font-bold">
-                    I'm a <span class="text-[#00e5ff]">Front</span>
+                    I'm a <span id="typed-text" class="text-[#00e5ff]"></span>
                 </div>
                 
                 <p class="text-gray-300 text-lg lg:text-xl">
@@ -280,16 +240,16 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Services Section -->
     <div id="services" class="lg:ml-64 p-8 main-content min-h-screen">
         <div class="container mx-auto max-w-6xl">
             <!-- Section Title -->
             <div class="mb-12 text-center">
                 <h2 class="text-5xl font-bold">
-                    My <span class="text-[#00e5ff]">Services</span>
+                    My <span class="text-[#04D9FF]">Services</span>
                 </h2>
-                <div class="w-24 h-1 bg-[#00e5ff] mt-4 mx-auto"></div>
+                <div class="w-24 h-1 bg-[#04D9FF] mt-4 mx-auto"></div>
             </div>
 
             <!-- Subtitle -->
@@ -302,8 +262,8 @@
             <!-- Services Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Frontend Development -->
-                <div class="bg-[#0a0a0a] p-8 rounded-2xl group hover:border-[#00e5ff] border border-transparent transition-all duration-300">
-                    <div class="text-[#00e5ff] text-4xl mb-6">
+                <div class="bg-[#0a0a0a] p-8 rounded-2xl group hover:border-[#04D9FF] border border-transparent transition-all duration-300">
+                    <div class="text-[#04D9FF] text-4xl mb-6">
                         <i class="fas fa-laptop-code"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-4">Frontend Development</h3>
@@ -313,23 +273,23 @@
                     </p>
                     <ul class="space-y-3">
                         <li class="flex items-center text-gray-300">
-                            <i class="fas fa-check text-[#00e5ff] mr-3"></i>
+                            <i class="fas fa-check text-[#04D9FF] mr-3"></i>
                             Modern Frameworks
                         </li>
                         <li class="flex items-center text-gray-300">
-                            <i class="fas fa-check text-[#00e5ff] mr-3"></i>
+                            <i class="fas fa-check text-[#04D9FF] mr-3"></i>
                             Interactive UI/UX
                         </li>
                         <li class="flex items-center text-gray-300">
-                            <i class="fas fa-check text-[#00e5ff] mr-3"></i>
+                            <i class="fas fa-check text-[#04D9FF] mr-3"></i>
                             Animation Effects
                         </li>
                     </ul>
                 </div>
 
                 <!-- WordPress Development -->
-                <div class="bg-[#0a0a0a] p-8 rounded-2xl group hover:border-[#00e5ff] border border-transparent transition-all duration-300">
-                    <div class="text-[#00e5ff] text-4xl mb-6">
+                <div class="bg-[#0a0a0a] p-8 rounded-2xl group hover:border-[#04D9FF] border border-transparent transition-all duration-300">
+                    <div class="text-[#04D9FF] text-4xl mb-6">
                         <i class="fab fa-wordpress"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-4">WordPress Development</h3>
@@ -339,15 +299,15 @@
                     </p>
                     <ul class="space-y-3">
                         <li class="flex items-center text-gray-300">
-                            <i class="fas fa-check text-[#00e5ff] mr-3"></i>
+                            <i class="fas fa-check text-[#04D9FF] mr-3"></i>
                             Custom Themes
                         </li>
                         <li class="flex items-center text-gray-300">
-                            <i class="fas fa-check text-[#00e5ff] mr-3"></i>
+                            <i class="fas fa-check text-[#04D9FF] mr-3"></i>
                             E-commerce Integration
                         </li>
                         <li class="flex items-center text-gray-300">
-                            <i class="fas fa-check text-[#00e5ff] mr-3"></i>
+                            <i class="fas fa-check text-[#04D9FF] mr-3"></i>
                             Speed Optimization
                         </li>
                     </ul>
@@ -455,117 +415,105 @@
     </div>
     
     <!-- Contact Section -->
-    <div id="contact" class="lg:ml-64 p-8 main-content min-h-screen">
+    <div id="contact" class="lg:ml-64 p-8 main-content min-h-screen bg-[#0A0A0A]">
         <div class="container mx-auto max-w-6xl">
             <!-- Section Title -->
             <div class="mb-12 text-center">
-                <h2 class="text-5xl font-bold">
-                    Contact <span class="text-[#00e5ff]">Me</span>
+                <h2 class="text-6xl font-bold">
+                    Contact <span class="text-[#04D9FF]">Me</span>
                 </h2>
-                <div class="w-24 h-1 bg-[#00e5ff] mt-4 mx-auto"></div>
-            </div>
-
-            <!-- Subtitle -->
-            <div class="text-center mb-16">
-                <p class="text-gray-300 text-lg max-w-3xl mx-auto">
-                    Let's work together on your next project
-                </p>
+                <div class="mt-4">
+                    <p class="text-gray-300">Let's work together on your next project</p>
+                </div>
             </div>
 
             <!-- Contact Content -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <!-- Contact Information -->
-                <div class="bg-[#0a0a0a] p-8 rounded-2xl">
-                    <h3 class="text-2xl font-bold mb-8">Contact Information</h3>
+                <div class="bg-[#0E0E0E] p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-white mb-8">Contact Information</h3>
 
                     <!-- Contact Details -->
                     <div class="space-y-6">
                         <!-- Email -->
                         <div class="flex items-center space-x-4">
-                            <div class="bg-[#111111] p-4 rounded-full text-[#00e5ff]">
-                                <i class="fas fa-envelope text-xl"></i>
+                            <div class="bg-[#04D9FF]/10 p-4 rounded-full">
+                                <i class="fas fa-envelope text-[#04D9FF]"></i>
                             </div>
                             <div>
-                                <h4 class="text-[#00e5ff] text-sm mb-1">Email</h4>
+                                <h4 class="text-[#04D9FF] text-sm">Email</h4>
                                 <p class="text-white">ylgeenuus425@gmail.com</p>
                             </div>
                         </div>
 
                         <!-- Phone -->
                         <div class="flex items-center space-x-4">
-                            <div class="bg-[#111111] p-4 rounded-full text-[#00e5ff]">
-                                <i class="fas fa-phone-alt text-xl"></i>
+                            <div class="bg-[#04D9FF]/10 p-4 rounded-full">
+                                <i class="fas fa-phone text-[#04D9FF]"></i>
                             </div>
                             <div>
-                                <h4 class="text-[#00e5ff] text-sm mb-1">Phone</h4>
+                                <h4 class="text-[#04D9FF] text-sm">Phone</h4>
                                 <p class="text-white">+94 71 269 6251</p>
                             </div>
                         </div>
 
                         <!-- Location -->
                         <div class="flex items-center space-x-4">
-                            <div class="bg-[#111111] p-4 rounded-full text-[#00e5ff]">
-                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            <div class="bg-[#04D9FF]/10 p-4 rounded-full">
+                                <i class="fas fa-map-marker-alt text-[#04D9FF]"></i>
                             </div>
                             <div>
-                                <h4 class="text-[#00e5ff] text-sm mb-1">Location</h4>
+                                <h4 class="text-[#04D9FF] text-sm">Location</h4>
                                 <p class="text-white">Kalutara, Sri Lanka</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Social Links -->
-                    <div class="mt-8">
-                        <h4 class="text-xl font-bold mb-4">Follow Me</h4>
-                        <div class="flex space-x-3">
-                            <a href="#" class="bg-[#111111] p-3 rounded-full text-[#00e5ff] hover:bg-[#00e5ff] hover:text-white transition-all duration-300">
-                                <i class="fab fa-whatsapp"></i>
+                    <!-- Follow Me -->
+                    <div class="mt-12">
+                        <h4 class="text-xl font-bold text-white mb-6">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-[#04D9FF]/10 p-3 rounded-full hover:bg-[#04D9FF] transition-all duration-300 group">
+                                <i class="fab fa-whatsapp text-[#04D9FF] group-hover:text-white"></i>
                             </a>
-                            <a href="#" class="bg-[#111111] p-3 rounded-full text-[#00e5ff] hover:bg-[#00e5ff] hover:text-white transition-all duration-300">
-                                <i class="fab fa-linkedin-in"></i>
+                            <a href="#" class="bg-[#04D9FF]/10 p-3 rounded-full hover:bg-[#04D9FF] transition-all duration-300 group">
+                                <i class="fab fa-linkedin-in text-[#04D9FF] group-hover:text-white"></i>
                             </a>
-                            <a href="#" class="bg-[#111111] p-3 rounded-full text-[#00e5ff] hover:bg-[#00e5ff] hover:text-white transition-all duration-300">
-                                <i class="fab fa-github"></i>
+                            <a href="#" class="bg-[#04D9FF]/10 p-3 rounded-full hover:bg-[#04D9FF] transition-all duration-300 group">
+                                <i class="fab fa-github text-[#04D9FF] group-hover:text-white"></i>
                             </a>
-                            <a href="#" class="bg-[#111111] p-3 rounded-full text-[#00e5ff] hover:bg-[#00e5ff] hover:text-white transition-all duration-300">
-                                <i class="fab fa-behance"></i>
+                            <a href="#" class="bg-[#04D9FF]/10 p-3 rounded-full hover:bg-[#04D9FF] transition-all duration-300 group">
+                                <i class="fab fa-behance text-[#04D9FF] group-hover:text-white"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Contact Form -->
-                <div class="bg-[#0a0a0a] p-8 rounded-2xl">
-                    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
-                        <input type="hidden" name="access_key" value="YOUR-ACCESS-KEY">
-                        
+                <div class="bg-[#0E0E0E] p-8 rounded-2xl">
+                    <form class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label class="text-[#00e5ff] text-sm mb-1 block">Name</label>
-                                <input type="text" name="name" required
-                                    class="w-full bg-[#111111] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00e5ff]">
+                                <label class="text-[#04D9FF] text-sm block mb-2">Name</label>
+                                <input type="text" class="w-full bg-[#0A0A0A] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#04D9FF] border border-[#04D9FF]/20">
                             </div>
                             <div>
-                                <label class="text-[#00e5ff] text-sm mb-1 block">Email</label>
-                                <input type="email" name="email" required
-                                    class="w-full bg-[#111111] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00e5ff]">
+                                <label class="text-[#04D9FF] text-sm block mb-2">Email</label>
+                                <input type="email" class="w-full bg-[#0A0A0A] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#04D9FF] border border-[#04D9FF]/20">
                             </div>
                         </div>
 
                         <div>
-                            <label class="text-[#00e5ff] text-sm mb-1 block">Subject</label>
-                            <input type="text" name="subject" required
-                                class="w-full bg-[#111111] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00e5ff]">
+                            <label class="text-[#04D9FF] text-sm block mb-2">Subject</label>
+                            <input type="text" class="w-full bg-[#0A0A0A] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#04D9FF] border border-[#04D9FF]/20">
                         </div>
 
                         <div>
-                            <label class="text-[#00e5ff] text-sm mb-1 block">Message</label>
-                            <textarea name="message" rows="6" required
-                                class="w-full bg-[#111111] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00e5ff] resize-none"></textarea>
+                            <label class="text-[#04D9FF] text-sm block mb-2">Message</label>
+                            <textarea rows="6" class="w-full bg-[#0A0A0A] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#04D9FF] border border-[#04D9FF]/20 resize-none"></textarea>
                         </div>
 
-                        <button type="submit" 
-                            class="w-full bg-[#00e5ff] text-white py-4 rounded-lg font-semibold hover:bg-[#00c8ff] transition-all duration-300">
+                        <button type="submit" class="w-full bg-[#04D9FF] text-white py-4 rounded-lg font-semibold hover:bg-[#04D9FF]/90 transition-all duration-300">
                             Send Message
                         </button>
                     </form>
@@ -612,13 +560,13 @@
                             <a href="#about" class="text-gray-300 hover:text-[#00e5ff] transition-colors">About</a>
                         </li>
                         <li>
-                            <a href="#services" class="text-gray-300 hover:text-[#00e5ff] transition-colors">Services</a>
-                        </li>
-                        <li>
                             <a href="#portfolio" class="text-gray-300 hover:text-[#00e5ff] transition-colors">Portfolio</a>
                         </li>
                         <li>
                             <a href="#contact" class="text-gray-300 hover:text-[#00e5ff] transition-colors">Contact</a>
+                        </li>
+                        <li>
+                            <a href="#services" class="text-gray-300 hover:text-[#04D9FF] transition-colors">Services</a>
                         </li>
                     </ul>
                 </div>

@@ -1,70 +1,3 @@
-// Add this at the beginning of your script.js file
-document.body.classList.add('loading');
-
-// Modern splash screen initialization
-const initializeSplashScreen = () => {
-    const splashScreen = document.getElementById('splash-screen');
-    const mainContent = document.querySelector('.main-content');
-    
-    const hideSplashScreen = () => {
-        splashScreen.classList.add('hidden');
-        document.body.classList.remove('loading');
-        mainContent?.classList.add('loaded');
-    };
-
-    const preloadImages = async () => {
-        const imagesToPreload = [
-            'images/propic-03.jpg',
-            'images/FavIcon.png',
-            // Add other important images here
-        ];
-
-        const preloadPromises = imagesToPreload.map(src => {
-            return new Promise((resolve, reject) => {
-                const img = new Image();
-                img.src = src;
-                img.onload = resolve;
-                img.onerror = reject;
-            });
-        });
-
-        return Promise.all(preloadPromises).catch(error => {
-            console.warn('Some images failed to preload:', error);
-        });
-    };
-
-    const init = async () => {
-        try {
-            // Create a more dynamic loading experience
-            const minimumLoadingTime = new Promise(resolve => 
-                setTimeout(resolve, 2500)
-            );
-
-            await Promise.all([
-                preloadImages(),
-                minimumLoadingTime,
-                // Add other initialization tasks here
-            ]);
-
-            // Add a small delay before hiding for smoother transition
-            requestAnimationFrame(() => {
-                requestAnimationFrame(() => {
-                    hideSplashScreen();
-                });
-            });
-        } catch (error) {
-            console.error('Error during initialization:', error);
-            hideSplashScreen();
-        }
-    };
-
-    // Start initialization when page loads
-    window.addEventListener('load', init);
-};
-
-// Initialize splash screen
-initializeSplashScreen();
-
 // Navigation functionality can be added here
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -184,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
         scrollToPortfolio();
     });
 
-    // Add contact scroll function
+    // Add this inside your DOMContentLoaded event listener
     function scrollToContact() {
         const contactSection = document.getElementById('contact');
         contactSection.scrollIntoView({ behavior: 'smooth' });
@@ -200,53 +133,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Add this inside your DOMContentLoaded event listener
     const contactLink = document.querySelector('a[href="#contact"]');
     contactLink.addEventListener('click', function(e) {
         e.preventDefault();
         scrollToContact();
-    });
-
-    const form = document.querySelector('form');
-    const result = document.getElementById('result');
-    const successDiv = result.querySelector('.success');
-    const errorDiv = result.querySelector('.error');
-
-    form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        try {
-            const formData = new FormData(form);
-            const response = await fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                body: formData
-            });
-
-            const data = await response.json();
-
-            if (data.success) {
-                // Show success message
-                successDiv.textContent = "Thanks! Message sent successfully.";
-                errorDiv.textContent = "";
-                result.classList.remove('hidden');
-                form.reset();
-
-                // Hide success message after 5 seconds
-                setTimeout(() => {
-                    result.classList.add('hidden');
-                }, 5000);
-            } else {
-                // Show error message
-                errorDiv.textContent = "Oops! Something went wrong. Please try again.";
-                successDiv.textContent = "";
-                result.classList.remove('hidden');
-            }
-        } catch (error) {
-            // Show error message
-            errorDiv.textContent = "Oops! Something went wrong. Please try again.";
-            successDiv.textContent = "";
-            result.classList.remove('hidden');
-        }
     });
 });
 
@@ -342,8 +232,8 @@ document.addEventListener('DOMContentLoaded', init);
 // Init App
 function init() {
     const txtElement = document.getElementById('typed-text');
-    const words = ['Graphic Designer', 'Photographer'];
-    const wait = 3000;
+    const words = ['Frontend Developer', 'Web Developer'];
+    const wait = 1500;
     // Init TypeWriter
     new TypeWriter(txtElement, words, wait);
 }
