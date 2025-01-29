@@ -522,27 +522,23 @@ button.bg-orange-500 {
 }
 */
 
-/* Ensure orange elements stay consistent in both modes */
+/* Ensure orange elements stay consistent in both modes 
 .text-orange-500,
 .hover\:text-orange-500:hover {
     color: #04D9FF !important;
 }
+*/
 
-/* Update border colors for better visibility */
-[data-theme="light"] .border-gray-700 {
-    border-color: #e5e7eb !important;
-}
-
-/* Mobile controls bar styles */
+/* Mobile controls bar styles 
 .fixed.top-0.w-full {
     transition: background-color 0.3s ease;
 }
-
-/* Add subtle shadow in light mode */
+*/
+/* Add subtle shadow in light mode 
 [data-theme="light"] .fixed.top-0.w-full .bg-\[\#0A0A0A\] {
     background-color: var(--bg-secondary);
     border-bottom: 1px solid var(--border-color);
-}
+}*/
 
 /* Adjust main content padding for mobile bar */
 @media (max-width: 1024px) {
@@ -666,7 +662,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Portfolio styles */
+/* Portfolio styles 
 .group:hover img {
     transform: scale(1.05);
     transition: transform 0.5s ease;
@@ -675,14 +671,15 @@ html {
 .group img {
     transition: transform 0.5s ease;
 }
+*/
 
-/* Portfolio section background */
+/* Portfolio section background
 #portfolio {
     background-color: var(--bg-primary);
 }
+*/
 
-
-/* Portfolio card hover effects */
+/* Portfolio card hover effects 
 .group .absolute.inset-0 {
     transform: none;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.6));
@@ -693,7 +690,7 @@ html {
 .group:hover .absolute.inset-0 {
     opacity: 1;
 }
-
+*/
 /* Keep only the image zoom effect */
 .group:hover img {
     transform: scale(1.05);
@@ -709,10 +706,11 @@ html {
     background-color: var(--bg-primary);
 }
 
-/* Contact card styles */
+/* Contact card styles 
 .bg-\[\#0a0a0a\] {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+*/
 
 /* Form input styles */
 #contact input,
@@ -733,15 +731,6 @@ html {
 
 .bg-\[\#111111\].p-3:hover {
     background-color: var(--accent-color);
-}
-
-/* Contact info icon container hover */
-.bg-\[\#111111\].p-4 {
-    transition: all 0.3s ease;
-}
-
-.flex:hover .bg-\[\#111111\].p-4 {
-    transform: scale(1.1);
 }
 
 /* Submit button hover effect */
@@ -769,22 +758,7 @@ button[type="submit"]:hover {
     }
 }
 
-/* Form success/error message styles */
-#result {
-    padding: 1rem;
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-[data-theme="light"] #result .success {
-    color: #059669;
-}
-
-[data-theme="light"] #result .error {
-    color: #dc2626;
-} 
-
-/* Animated border styles */
+/* Animated border styles 
 .form-container {
     position: relative;
     background: #1a1a1a;
@@ -842,16 +816,7 @@ button[type="submit"]:hover {
 .animate-border-flow-horizontal-reverse {
     animation: borderFlowHorizontalReverse 3s ease-in-out infinite;
 }
-
-/* Light mode adjustments */
-[data-theme="light"] .form-container {
-    background: white;
-}
-
-[data-theme="light"] .form-container::before {
-    background: rgba(4, 217, 255, 0.1);
-} 
-
+*/
 /* Footer styles */
 footer {
     background-color: #0A0A0A;
@@ -1146,11 +1111,11 @@ footer .fas {
     margin-bottom: 1.5rem;
 }
 
-/* Make portfolio grid more compact */
+/* Make portfolio grid more compact 
 #portfolio .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3 {
     gap: 1rem;
 }
-
+*/
 /* Adjust portfolio card sizes */
 #portfolio .group img {
     height: 200px; /* Reduce image height */
@@ -1317,7 +1282,7 @@ footer .fas {
     }
 } 
 
-/* Modern splash screen styles */
+/* Modern splash screen styles 
 #splash-screen {
     opacity: 1;
     visibility: visible;
@@ -1328,8 +1293,8 @@ footer .fas {
     opacity: 0;
     visibility: hidden;
 }
-
-/* Pulse animations */
+*/
+/* Pulse animations
 @keyframes pulse-slow {
     0%, 100% {
         transform: scale(1);
@@ -1340,7 +1305,8 @@ footer .fas {
         opacity: 0.7;
     }
 }
-
+*/
+/*
 .animate-pulse-slow {
     animation: pulse-slow 3s ease-in-out infinite;
 }
@@ -1349,8 +1315,8 @@ footer .fas {
     animation: pulse-slow 3s ease-in-out infinite;
     animation-delay: 1.5s;
 }
-
-/* Loading progress animation */
+*/
+/* Loading progress animation 
 .loading-progress {
     width: 0%;
     animation: loading 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
@@ -1370,8 +1336,8 @@ footer .fas {
         transform: translateX(100%);
     }
 }
-
-/* Loading state styles */
+*/
+/* Loading state styles
 body.loading {
     overflow: hidden;
 }
@@ -1386,8 +1352,8 @@ body.loading .main-content {
     transform: translateY(0);
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
-
-/* Loading dots bounce animation */
+ */
+/* Loading dots bounce animation
 .animate-bounce {
     animation: bounce 1s infinite;
 }
@@ -1400,8 +1366,8 @@ body.loading .main-content {
         transform: translateY(-4px);
     }
 } 
-
-/* Fiverr icon styles */
+ */
+/* Fiverr icon styles 
 .fiverr-icon {
     display: inline-flex;
     align-items: center;
@@ -1416,57 +1382,47 @@ body.loading .main-content {
     height: 1em;
 }
 
-/* Dark mode styles */
-[data-theme="dark"] .fiverr-icon {
-    color: #fff;
-}
-
-/* Light mode styles */
-[data-theme="light"] .fiverr-icon {
-    color: #1dbf73;
-}
-
-/* Hover styles */
+/* Hover styles 
 .hover\:bg-orange-500:hover .fiverr-icon {
     color: #fff;
 } 
-
-/* Update splash screen text sizes */
+*/
+/* Update splash screen text sizes 
 #splash-screen h1.text-6xl {
-    font-size: 2.5rem; /* Reduced from 3.75rem (text-6xl) */
+    font-size: 2.5rem; /* Reduced from 3.75rem (text-6xl) 
 }
-
-/* Add responsive adjustments for smaller screens */
+*/
+/* Add responsive adjustments for smaller screens
 @media (max-width: 768px) {
     #splash-screen h1.text-6xl {
         font-size: 2rem;
     }
 }
-
-/* Adjust loading text size */
+ */
+/* Adjust loading text size 
 #splash-screen .loading-text {
-    font-size: 0.75rem; /* Reduced from 0.875rem (text-sm) */
+    font-size: 0.75rem; /* Reduced from 0.875rem (text-sm) 
     letter-spacing: 0.05em;
 }
-
-/* Adjust loading dots size */
+*/
+/* Adjust loading dots size 
 #splash-screen .loading-text .w-1.h-1 {
     width: 3px;
     height: 3px;
 } 
-
+*/
 /* Portfolio page specific styles */
 body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
 }
 
-/* Portfolio page background */
+/* Portfolio page background 
 [data-theme="light"] body {
     background-color: var(--bg-primary);
 }
-
-/* Portfolio filter buttons light mode */
+*/
+/* Portfolio filter buttons light mode 
 [data-theme="light"] .filter-btn {
     background-color: var(--bg-secondary);
     color: var(--text-primary);
@@ -1481,23 +1437,7 @@ body {
     background-color: #04D9FF;
     color: white;
 }
-
-/* Portfolio items light mode */
-[data-theme="light"] .portfolio-item {
-    background-color: var(--bg-secondary);
-} 
-
-/* Portfolio filter buttons container */
-.flex.flex-wrap.justify-center.gap-4.mb-12 {
-    max-width: 1200px;
-    margin: 0 auto 3rem auto;
-}
-
-/* Filter buttons responsive styles */
-.filter-btn {
-    margin: 0.25rem;
-    white-space: nowrap;
-}
+*/
 
 /* Adjust button size on mobile */
 @media (max-width: 768px) {
@@ -1526,18 +1466,19 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Light mode navigation bar */
+/* Light mode navigation bar 
 [data-theme="light"] .fixed.top-0.left-0.right-0 {
     background-color: rgba(255, 255, 255, 0.9);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
+*/
 
 /* Adjust container padding for fixed header */
 .container {
     padding-top: calc(4rem + 1rem); /* 4rem for navbar height + 1rem extra space */
 }
 
-/* Keep theme toggle white in light mode */
+/* Keep theme toggle white in light mode 
 [data-theme="light"] #theme-toggle {
     color: #1a1a1a;
 }
@@ -1545,11 +1486,12 @@ body {
 [data-theme="light"] #theme-toggle:hover {
     color: #04D9FF;
 } 
-
-/* Update button hover effect */
+*/
+/* Update button hover effect 
 button.bg-\[\#00e5ff\]:hover {
     box-shadow: 0 4px 12px rgba(0, 229, 255, 0.3);
 }
+*/
 
 /* Profile image styles */
 .relative img {
@@ -1571,7 +1513,7 @@ button.bg-\[\#00e5ff\]:hover {
     animation: borderPulse 2s ease-in-out infinite;
 }
 
-/* Text animation for name */
+/* Text animation for name 
 .text-\[\#00e5ff\] {
     background: linear-gradient(45deg, #00e5ff, #00c8ff);
     -webkit-background-clip: text;
@@ -1579,7 +1521,7 @@ button.bg-\[\#00e5ff\]:hover {
     -webkit-text-fill-color: transparent;
     display: inline-block;
 }
-
+*/
 /* Responsive text sizing */
 @media (max-width: 768px) {
     .text-4xl.lg\:text-5xl {
@@ -1596,7 +1538,7 @@ button.bg-\[\#00e5ff\]:hover {
     background-color: var(--bg-secondary);
 }
 
-/* Progress bar animations */
+/* Progress bar animations 
 .bg-\[\#00e5ff\].h-2 {
     animation: fillProgress 1.5s ease-out forwards;
 }
@@ -1605,8 +1547,8 @@ button.bg-\[\#00e5ff\]:hover {
     from { width: 0; }
     to { width: var(--progress); }
 }
-
-/* Card hover effects */
+*/
+/* Card hover effects 
 .bg-\[\#0a0a0a\] {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -1614,8 +1556,8 @@ button.bg-\[\#00e5ff\]:hover {
 .bg-\[\#0a0a0a\]:hover {
     box-shadow: 0 10px 20px rgba(0, 229, 255, 0.1);
 }
-
-/* Button hover effects */
+*/
+/* Button hover effects 
 .bg-\[\#00e5ff\]:hover {
     box-shadow: 0 4px 12px rgba(0, 229, 255, 0.3);
 }
@@ -1624,7 +1566,7 @@ button.bg-\[\#00e5ff\]:hover {
     background-color: var(--accent-color);
     box-shadow: 0 4px 12px rgba(0, 229, 255, 0.3);
 }
-
+*/
 /* Responsive adjustments */
 @media (max-width: 768px) {
     #about .grid {
@@ -1640,7 +1582,7 @@ button.bg-\[\#00e5ff\]:hover {
     }
 }
 
-/* Skills icons animation */
+/* Skills icons animation 
 .fas, .fab {
     transition: transform 0.3s ease;
 }
@@ -1649,13 +1591,13 @@ button.bg-\[\#00e5ff\]:hover {
 .bg-\[\#0a0a0a\]:hover .fab {
     transform: scale(1.2);
 }
-
+*/
 /* Portfolio section styles */
 #portfolio {
     background-color: var(--bg-secondary);
 }
 
-/* Project card styles */
+/* Project card styles 
 .bg-\[\#0a0a0a\].rounded-2xl {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -1663,13 +1605,13 @@ button.bg-\[\#00e5ff\]:hover {
 .bg-\[\#0a0a0a\].rounded-2xl:hover {
     box-shadow: 0 10px 20px rgba(0, 229, 255, 0.1);
 }
-
-/* Image hover effect */
+*/
+/* Image hover effect 
 .group:hover .group-hover\:scale-110 {
     transform: scale(1.1);
 }
-
-/* Technology tags */
+*/
+/* Technology tags 
 .bg-\[\#111111\] {
     transition: all 0.3s ease;
 }
@@ -1678,8 +1620,9 @@ button.bg-\[\#00e5ff\]:hover {
     background-color: var(--accent-color);
     color: white;
 }
+*/
 
-/* View All Projects button hover effect */
+/* View All Projects button hover effect 
 .bg-\[\#00e5ff\].inline-flex:hover {
     transform: translateX(5px);
 }
@@ -1691,6 +1634,7 @@ button.bg-\[\#00e5ff\]:hover {
 .bg-\[\#00e5ff\].inline-flex i {
     transition: transform 0.3s ease;
 }
+*/
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -1706,6 +1650,11 @@ button.bg-\[\#00e5ff\]:hover {
         max-width: 400px;
         margin: 0 auto;
     }
+
+    #portfolio .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
 } 
 
 /* Contact section mobile styles */
@@ -1715,15 +1664,8 @@ button.bg-\[\#00e5ff\]:hover {
         padding-right: 0;
     }
 
-    #contact .grid {
-        gap: 2px;  /* Reduced gap between cards on mobile */
-    }
-
     #contact .bg-\[\#0E0E0E\] {
-        border-radius: 0;
-        margin-left: -8px;
-        margin-right: -8px;
-        width: calc(100% + 16px);
+        border-radius: 25px;
     }
     
     /* Keep form inputs with some padding */
@@ -1739,14 +1681,8 @@ button.bg-\[\#00e5ff\]:hover {
         padding-right: 0;
     }
 
-    #about .grid {
-        gap: 2px;
-    }
-
     #about .bg-\[\#0E0E0E\] {
-        border-radius: 0;
-        margin-left: -8px;
-        margin-right: -8px;
-        width: calc(100% + 16px);
+        border-radius: 25px;
+
     }
 } 

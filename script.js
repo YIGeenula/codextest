@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
     new TypeWriter(txtElement, words, wait);
 });
  
-// Updated JavaScript
+// Availablity Status Dot
 function updateAvailabilityStatus() {
     const statusElement = document.querySelector('.availability-status');
     const statusText = statusElement.childNodes[0].textContent.trim();
