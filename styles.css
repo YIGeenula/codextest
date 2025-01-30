@@ -139,12 +139,6 @@ footer .fas {
         flex-direction: column;
     }
 
-    /* Contact section */
-    #contact .container {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
     #contact .grid {
         gap: 2px;
     }
@@ -552,6 +546,28 @@ button.bg-orange-500 {
     background-color: var(--bg-primary);
 }
 
+/* Skill Progress bar */
+/* Add progress bar animation */
+.bg-\[\#04D9FF\].h-2 {
+    animation: loadProgress 1.5s ease-out forwards;
+    transform-origin: left;
+}
+
+@keyframes loadProgress {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+/* Optional: Add staggered animation delays */
+.bg-\[\#04D9FF\].h-2:nth-child(1) { animation-delay: 0.2s; }
+.bg-\[\#04D9FF\].h-2:nth-child(2) { animation-delay: 0.4s; }
+.bg-\[\#04D9FF\].h-2:nth-child(3) { animation-delay: 0.6s; }
+.bg-\[\#04D9FF\].h-2:nth-child(4) { animation-delay: 0.8s; }
+
 /* Add blinking light animation */
 @keyframes ping {
     75%, 100% {
@@ -748,7 +764,7 @@ button[type="submit"]:hover {
         font-size: 2.5rem;
     }
     
-    #contact .grid {
+    #contact .gap-8 {
         gap: 2rem;
     }
     
@@ -872,7 +888,6 @@ footer .fas {
     }
 } 
 
-/* Add this to your existing CSS */
 .txt {
     border-right: 0.2rem solid #04D9FF;
     animation: blink 0.7s infinite;
@@ -1686,3 +1701,51 @@ button.bg-\[\#00e5ff\]:hover {
 
     }
 } 
+/* Contact Form Successfull Message */
+/* Progress bar animation */
+.progress-bar {
+    width: 100%;
+    animation: progress 4.8s linear forwards;
+    transform-origin: left;
+}
+
+@keyframes progress {
+    0% {
+        transform: scaleX(1);
+    }
+    100% {
+        transform: scaleX(0);
+    }
+}
+
+/* Success message animation */
+#success-message.show {
+    animation: slideIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+#success-message.hidden {
+    animation: slideOut 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(120%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(120%);
+        opacity: 0;
+    }
+}
+
