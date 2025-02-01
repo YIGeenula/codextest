@@ -139,15 +139,21 @@ footer .fas {
         flex-direction: column;
     }
 
-    #contact .grid {
-        gap: 2px;
+    #contact .grid-cols-1.lg\:grid-cols-2 {
+        gap: 2rem;
     }
-
-    #contact .bg-\[\#0E0E0E\] {
-        border-radius: 0;
-        margin-left: -8px;
-        margin-right: -8px;
-        width: calc(100% + 16px);
+    
+    #contact .bg-\[\#0a0a0a\] {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 25px;
+    }
+    
+    #contact .container.px-0.sm\:px-8 {
+        padding-left: 0;
+        padding-right: 0;
     }
 
     /* Footer adjustments */
@@ -758,22 +764,6 @@ button[type="submit"]:hover {
     box-shadow: 0 4px 12px rgba(0, 229, 255, 0.3);
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    #contact .text-5xl {
-        font-size: 2.5rem;
-    }
-    
-    #contact .gap-8 {
-        gap: 2rem;
-    }
-    
-    .bg-\[\#0a0a0a\] {
-        max-width: 400px;
-        margin: 0 auto;
-    }
-}
-
 /* Animated border styles 
 .form-container {
     position: relative;
@@ -958,7 +948,7 @@ footer .fas {
     /* Make scrollable sections more compact */
     #about .container, 
     #services .container,
-    #portfolio .container {
+    #portfolio .container{
         max-height: calc(100vh - 3rem);
         padding: 1rem;
     }
@@ -1113,7 +1103,7 @@ footer .fas {
         max-height: none;
         overflow-y: visible;
     }
-} 
+}  
 
 /* Portfolio section adjustments to reduce size */
 #portfolio .container {
@@ -1195,6 +1185,30 @@ footer .fas {
         height: 180px; /* Even smaller for mobile */
     }
 } 
+@media (min-width: 1024px) {
+    /* Smooth transition only on desktop */
+    .lg\:opacity-0 {
+        transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* Keep button interactive when visible */
+    .lg\:group:hover .lg\:group-hover\:opacity-100 {
+        pointer-events: auto;
+    }
+}
+
+@media (max-width: 1024px) {
+    /* Slightly increase button size for mobile */
+    .absolute.top-3.right-3 {
+        width: 2.75rem;
+        height: 2.75rem;
+    }
+    
+    /* Make icon more visible */
+    .fa-arrow-up-right-from-square {
+        font-size: 1.1rem;
+    }
+}
 
 /* Home section adjustments to reduce size */
 #home .container {
@@ -1597,6 +1611,7 @@ button.bg-\[\#00e5ff\]:hover {
     }
 }
 
+
 /* Skills icons animation 
 .fas, .fab {
     transition: transform 0.3s ease;
@@ -1610,6 +1625,18 @@ button.bg-\[\#00e5ff\]:hover {
 /* Portfolio section styles */
 #portfolio {
     background-color: var(--bg-secondary);
+}
+
+@media (min-width: 768px) {
+    /* Smooth button scaling */
+    .hover\:scale-110 {
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* Maintain icon centering during scale */
+    .fa-arrow-up-right-from-square {
+        transform: translateZ(0);
+    }
 }
 
 /* Project card styles 
@@ -1653,39 +1680,35 @@ button.bg-\[\#00e5ff\]:hover {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    #portfolio .text-5xl {
-        font-size: 2.5rem;
-    }
-    
-    #portfolio .grid {
-        gap: 1.5rem;
-    }
-    
-    .bg-\[\#0a0a0a\].rounded-2xl {
-        max-width: 400px;
-        margin: 0 auto;
+    #portfolio .text-xl {
+        font-size: 1.125rem; /* 18px */
+        line-height: 1.4;
     }
 
-    #portfolio .container {
-        padding-left: 0;
-        padding-right: 0;
-    }
-} 
-
-/* Contact section mobile styles */
-@media (max-width: 768px) {
-    #contact .container {
-        padding-left: 0;
-        padding-right: 0;
+    /* Fix project descriptions */
+    #portfolio .text-sm {
+        font-size: 0.875rem; /* 14px */
+        line-height: 1.5;
+        margin-bottom: 0.75rem;
     }
 
-    #contact .bg-\[\#0E0E0E\] {
-        border-radius: 25px;
+    /* Adjust technology tags */
+    #portfolio .text-xs {
+        font-size: 0.75rem; /* 12px */
+        padding: 0.25rem 0.5rem;
     }
-    
-    /* Keep form inputs with some padding */
-    #contact form {
-        padding: 0;
+
+    /* Ensure text containers have proper spacing */
+    #portfolio .p-6 {
+        padding: 1rem;
+    }
+
+    /* Prevent text overflow */
+    #portfolio .rounded-2xl {
+        word-wrap: break-word;
+    }
+    .group:hover .opacity-0 {
+        opacity: 100 !important;
     }
 } 
 
@@ -1701,6 +1724,7 @@ button.bg-\[\#00e5ff\]:hover {
 
     }
 } 
+
 /* Contact Form Successfull Message */
 /* Progress bar animation */
 .progress-bar {
@@ -1749,3 +1773,79 @@ button.bg-\[\#00e5ff\]:hover {
     }
 }
 
+
+/* Popup Animations */
+#hirePopup {
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#hirePopup.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+#hirePopup .bg-\[\#0a0a0a\] {
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+#hirePopup.active .bg-\[\#0a0a0a\] {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Social icons hover effect in popup */
+#hirePopup .social-icons a {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#hirePopup .social-icons a:hover {
+    transform: translateY(-3px);
+}
+
+/* Scroll Animations */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.scroll-animate.fade-left {
+    transform: translateX(-50px);
+}
+
+.scroll-animate.fade-right {
+    transform: translateX(50px);
+}
+
+.scroll-animate.fade-up {
+    transform: translateY(50px);
+}
+
+.scroll-animate.fade-down {
+    transform: translateY(-50px);
+}
+
+.scroll-animate.fade-in {
+    transform: translateY(0);
+}
+
+.scroll-animate.scale {
+    transform: scale(0.9);
+}
+
+/* Active state for scroll animations */
+.scroll-animate.active {
+    opacity: 1;
+    transform: translate(0) scale(1);
+}
+
+/* Delay classes for staggered animations */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
